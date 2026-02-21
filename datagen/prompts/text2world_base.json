@@ -1,0 +1,18 @@
+[
+  {
+    "id": "t2w_nighttime_tesla_y",
+    "prompt": "Nighttime curbside loading zone at a retail shopping center. Overhead lights illuminate the area. A white Tesla Model Y Juniper is parked with hazard lights on. A delivery robot approaches from the sidewalk. Wet pavement from recent rain reflects the lights."
+  },
+  {
+    "id": "t2w_busy_waymo_ipace",
+    "prompt": "Busy curbside pickup area. Three pedestrians with shopping bags cross the loading zone. A Waymo Jaguar I-PACE robotaxi with roof-mounted lidar waits at the curb. A small delivery robot is staged on the sidewalk, waiting for the pedestrians to clear. Time-restricted parking sign shows 15-minute limit."
+  },
+  {
+    "id": "t2w_morning_humanoid_model3",
+    "prompt": "Early morning, mostly empty parking lot. A Unitree-style humanoid robot walks along the curb toward a silver Tesla Model 3 with its trunk open. No pedestrians. Clear path. Loading zone markings painted on the asphalt."
+  },
+  {
+    "id": "t2w_multi_vehicle_dual_robot",
+    "prompt": "A white Tesla Model Y Juniper and a Waymo Jaguar I-PACE are both stopped in a curbside loading zone. Two wheeled delivery robots coordinate between the vehicles, one at each car's rear. A pedestrian with a stroller passes on the sidewalk. Shopping center storefronts visible in background. Midday sun, light shadows."
+  }
+]

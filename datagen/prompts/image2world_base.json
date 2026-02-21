@@ -1,0 +1,18 @@
+[
+  {
+    "id": "i2w_tesla_model_y_loading",
+    "prompt": "A white Tesla Model Y Juniper pulls into the curbside loading zone in front of a shopping mall. A small wheeled delivery robot exits from the rear. Pedestrians walk along the sidewalk nearby. Parking signs visible on the curb. Daytime, clear weather, retail shopping center."
+  },
+  {
+    "id": "i2w_humanoid_tesla_model_3",
+    "prompt": "A humanoid robot walks from the sidewalk toward a stopped silver Tesla Model 3 in the loading zone. The vehicle's rear trunk is open. A second delivery bot waits on the curb. Shopping center entrance visible in background."
+  },
+  {
+    "id": "i2w_waymo_ipace_delivery",
+    "prompt": "A white Waymo Jaguar I-PACE robotaxi with visible roof-mounted lidar sensor array is parked in a loading zone. A delivery robot approaches from the sidewalk to collect a package. A Tesla Model Y Juniper waits in the adjacent spot. Pedestrians nearby."
+  },
+  {
+    "id": "i2w_multi_vehicle_coordination",
+    "prompt": "Two vehicles are parked in adjacent loading zone spots — a black Tesla Model 3 and a white Waymo Jaguar I-PACE. A delivery robot navigates between them while a pedestrian crosses the loading zone. Security bollards mark the zone boundaries. Loading zone time restriction sign visible."
+  }
+]

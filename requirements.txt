@@ -1,0 +1,36 @@
+# requirements.txt — Autolane Handoff
+
+# Core
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.40.0
+accelerate>=0.27.0
+
+# Cosmos Reason 2 inference
+vllm>=0.4.0
+
+# Grounding DINO
+groundingdino-py>=0.4.0
+
+# Video processing
+ffmpeg-python>=0.2.0
+opencv-python>=4.9.0
+Pillow>=10.0.0
+
+# API server
+fastapi>=0.110.0
+uvicorn>=0.27.0
+python-multipart>=0.0.9
+
+# Data processing
+datasets>=2.18.0
+jsonlines>=4.0.0
+
+# Cosmos Predict 2.5 (datagen)
+diffusers>=0.27.0
+
+# Utilities
+tqdm>=4.66.0
+pyyaml>=6.0.1
+toml>=0.10.2
+numpy>=1.26.0
