@@ -82,6 +82,7 @@ if [[ "$ACTION" == "cloud-build" ]]; then
     echo "  Project: $PROJECT_ID"
 
     BUILD_CONFIG=$(mktemp /tmp/cloudbuild-XXXXXX)
+    trap 'rm -f "$BUILD_CONFIG"' EXIT
     cat > "$BUILD_CONFIG" <<YAML
 steps:
   - name: 'gcr.io/cloud-builders/docker'
@@ -96,6 +97,7 @@ YAML
         --config="$BUILD_CONFIG"
 
     rm -f "$BUILD_CONFIG"
+    trap - EXIT
 
     echo "Done. Image pushed to $IMAGE"
     exit 0
@@ -108,10 +110,22 @@ if [[ "$ACTION" == "download" ]]; then
     mkdir -p data/detection/image2world data/detection/text2world
 
     echo "[1/2] Downloading image2world detections..."
-    gsutil -m rsync -r "gs://$GCS_BUCKET/data/detection/image2world/" data/detection/image2world/ 2>/dev/null || echo "  (none found)"
+    if ! stderr=$(gsutil -m rsync -r "gs://$GCS_BUCKET/data/detection/image2world/" data/detection/image2world/ 2>&1); then
+        if echo "$stderr" | grep -q "No URLs matched"; then
+            echo "  (none found)"
+        else
+            echo "  Error: $stderr" >&2
+        fi
+    fi
 
     echo "[2/2] Downloading text2world detections..."
-    gsutil -m rsync -r "gs://$GCS_BUCKET/data/detection/text2world/" data/detection/text2world/ 2>/dev/null || echo "  (none found)"
+    if ! stderr=$(gsutil -m rsync -r "gs://$GCS_BUCKET/data/detection/text2world/" data/detection/text2world/ 2>&1); then
+        if echo "$stderr" | grep -q "No URLs matched"; then
+            echo "  (none found)"
+        else
+            echo "  Error: $stderr" >&2
+        fi
+    fi
 
     echo "Done. Results downloaded to data/detection/"
     exit 0
@@ -140,6 +154,7 @@ if [[ "$ACTION" == "vertex" ]]; then
 
         local config_file
         config_file=$(mktemp /tmp/detection-config-XXXXXX)
+        trap 'rm -f "$config_file"' RETURN
 
         cat > "$config_file" <<YAML
 workerPoolSpecs:

@@ -19,8 +19,8 @@ RUN pip install --no-cache-dir \
     opencv-python-headless \
     Pillow \
     numpy \
-    torch \
-    torchvision \
+    "torch==2.6.0" \
+    "torchvision==0.21.0" \
     pydantic-settings \
     google-cloud-storage
 

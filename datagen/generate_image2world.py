@@ -16,7 +16,7 @@ Usage:
         --photos datagen/site_photos/IMG_2659.jpg \
         --prompts datagen/prompts/image2world_base.json \
         --output data/synthetic_clips/image2world/ \
-        --prompt-ids i2w_tesla_model_y_loading
+        --prompt-ids i2w_delivery_bot_approach
 
     # Use 2B model for faster iteration
     poetry run python datagen/generate_image2world.py \

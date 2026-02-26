@@ -189,7 +189,8 @@ def render_batch(
             str(dst),
             show_confidence=show_confidence,
         )
-        output_files.append(str(dst))
+        if dst.exists():
+            output_files.append(str(dst))
 
     logger.info(
         "Rendered %d annotated frames to %s", len(output_files), output_dir

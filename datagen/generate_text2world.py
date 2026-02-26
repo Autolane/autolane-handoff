@@ -20,7 +20,7 @@ Usage:
     poetry run python datagen/generate_text2world.py \
         --prompts datagen/prompts/text2world_base.json \
         --output data/synthetic_clips/text2world/ \
-        --prompt-ids t2w_nighttime_tesla_y t2w_busy_waymo_ipace
+        --prompt-ids t2w_full_handoff t2w_nighttime_delivery
 
     # Use 2B model for faster iteration
     poetry run python datagen/generate_text2world.py \

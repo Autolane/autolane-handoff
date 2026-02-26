@@ -79,8 +79,12 @@ def gcs_download_prefix(
             continue
         local_path = local_dir / relative
         local_path.parent.mkdir(parents=True, exist_ok=True)
-        blob.download_to_filename(str(local_path))
-        downloaded.append(local_path)
+        try:
+            blob.download_to_filename(str(local_path))
+            downloaded.append(local_path)
+        except Exception:
+            logger.exception("Failed to download %s", blob.name)
+            local_path.unlink(missing_ok=True)
     return downloaded
 
 
@@ -113,11 +117,11 @@ def extract_frames(clip_path: Path, output_dir: Path, fps: int = EXTRACT_FPS) ->
     pattern = str(output_dir / f"{clip_stem}_frame_%04d.jpg")
 
     cmd = [
-        "ffmpeg", "-i", str(clip_path),
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-i", str(clip_path),
         "-vf", f"fps={fps}",
         "-q:v", "2",  # high quality JPEG
         pattern,
-        "-y", "-loglevel", "error",
     ]
 
     result = subprocess.run(cmd, check=False, capture_output=True, text=True)
@@ -130,18 +134,12 @@ def extract_frames(clip_path: Path, output_dir: Path, fps: int = EXTRACT_FPS) ->
     return frames
 
 
-def run_detection_on_frames(
-    frames: list[Path],
+def load_detector(
     box_threshold: float,
     text_threshold: float,
-) -> list[dict]:
-    """Run Grounding DINO on a list of frame paths.
-
-    Imports detection module and runs inference. Returns list of
-    FrameDetections as dicts.
-    """
+) -> "GroundingDINODetector":
+    """Instantiate and load the Grounding DINO detector once."""
     from detection.grounding_dino import GroundingDINODetector
-    from detection.prompts import DETECTION_PROMPT
 
     detector = GroundingDINODetector(
         variant="swint",
@@ -150,6 +148,18 @@ def run_detection_on_frames(
         text_threshold=text_threshold,
     )
     detector.load()
+    return detector
+
+
+def run_detection_on_frames(
+    detector: "GroundingDINODetector",
+    frames: list[Path],
+) -> list[dict]:
+    """Run Grounding DINO on a list of frame paths.
+
+    Returns list of FrameDetections as dicts.
+    """
+    from detection.prompts import DETECTION_PROMPT
 
     results = []
     for frame_path in frames:
@@ -175,7 +185,7 @@ def render_overlays(
     output_dir.mkdir(parents=True, exist_ok=True)
     annotated_paths = []
 
-    for frame_path, result_dict in zip(frames, detection_results):
+    for frame_path, result_dict in zip(frames, detection_results, strict=True):
         detections = [Detection(**d) for d in result_dict["detections"]]
 
         frame = cv2.imread(str(frame_path))
@@ -194,6 +204,7 @@ def render_overlays(
 def process_clip(
     client: storage.Client,
     config: DetectionConfig,
+    detector: "GroundingDINODetector",
     clip_path: Path,
     mode: str,
 ) -> bool:
@@ -219,9 +230,7 @@ def process_clip(
     logger.info("  Extracted %d frames from %s", len(frames), clip_name)
 
     # 2. Run detection
-    detection_results = run_detection_on_frames(
-        frames, config.box_threshold, config.text_threshold,
-    )
+    detection_results = run_detection_on_frames(detector, frames)
     total_dets = sum(len(r["detections"]) for r in detection_results)
     logger.info("  %d detections across %d frames", total_dets, len(frames))
 
@@ -301,6 +310,8 @@ def main() -> None:
     logger.info("[2/3] Processing %d clips...", len(all_clips))
 
     # Load model once, then process all clips
+    detector = load_detector(config.box_threshold, config.text_threshold)
+
     generated = 0
     skipped = 0
     failed = 0
@@ -318,7 +329,7 @@ def main() -> None:
         logger.info("[%d/%d] Processing: %s (%s)", idx, len(all_clips), clip_name, mode)
 
         try:
-            success = process_clip(client, config, clip_path, mode)
+            success = process_clip(client, config, detector, clip_path, mode)
             if success:
                 generated += 1
                 logger.info("[%d/%d] Done + uploaded: %s", idx, len(all_clips), clip_name)

@@ -9,6 +9,7 @@ Adapted from av-ride-hail-inference. Key differences:
 
 import argparse
 import os
+import sys
 import time
 from typing import Optional
 
@@ -296,7 +297,7 @@ def main():
     elif args.action == "check":
         if not args.endpoint_id:
             print("Error: --endpoint-id required for check action")
-            return
+            sys.exit(1)
         healthy = check_endpoint_health(args.endpoint_id)
         print(f"Endpoint healthy: {healthy}")
 
