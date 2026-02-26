@@ -1,18 +1,102 @@
 [
   {
-    "id": "t2w_nighttime_tesla_y",
-    "prompt": "Nighttime curbside loading zone at a retail shopping center. Overhead lights illuminate the area. A white Tesla Model Y Juniper is parked with hazard lights on. A delivery robot approaches from the sidewalk. Wet pavement from recent rain reflects the lights."
+    "id": "t2w_full_handoff",
+    "prompt": "A curbside loading zone at a modern shopping center with glass storefronts in the background. A white four-door sedan is parked at the curb, completely stationary, with its rear hatch lifted open revealing an empty cargo area. A small four-wheeled delivery robot with a white body and a sealed cardboard box on its flat cargo tray waits on the sidewalk next to the vehicle. A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features stands at the rear of the car, reaching toward the delivery robot to pick up the cardboard box. Two pedestrians walk past on the sidewalk. Daytime, clear weather, blue sky. Wide angle, security camera perspective from above, static camera, no camera movement."
   },
   {
-    "id": "t2w_busy_waymo_ipace",
-    "prompt": "Busy curbside pickup area. Three pedestrians with shopping bags cross the loading zone. A Waymo Jaguar I-PACE robotaxi with roof-mounted lidar waits at the curb. A small delivery robot is staged on the sidewalk, waiting for the pedestrians to clear. Time-restricted parking sign shows 15-minute limit."
+    "id": "t2w_nighttime_delivery",
+    "prompt": "Nighttime curbside loading zone at a retail shopping center. Overhead streetlights cast warm yellow light on the scene. A white four-door sedan is parked at the curb with its rear hatch open and hazard lights blinking orange. A small four-wheeled delivery robot with LED indicator lights on its body approaches slowly from the sidewalk toward the vehicle. Wet pavement from recent rain reflects the streetlights and car lights. No pedestrians. Wide angle, security camera perspective, static camera, no camera movement."
   },
   {
-    "id": "t2w_morning_humanoid_model3",
-    "prompt": "Early morning, mostly empty parking lot. A Unitree-style humanoid robot walks along the curb toward a silver Tesla Model 3 with its trunk open. No pedestrians. Clear path. Loading zone markings painted on the asphalt."
+    "id": "t2w_busy_pedestrian_crossing",
+    "prompt": "A busy curbside pickup area at a shopping center during midday. Three pedestrians carrying colorful shopping bags walk across the loading zone on a crosswalk. A white SUV is parked at the curb, completely stationary. A small four-wheeled delivery robot with a white body is stopped on the sidewalk, waiting for the pedestrians to pass. Bright sunlight, sharp shadows on the asphalt. Storefronts with awnings visible in the background. Wide angle, security camera perspective, static camera, no camera movement."
   },
   {
-    "id": "t2w_multi_vehicle_dual_robot",
-    "prompt": "A white Tesla Model Y Juniper and a Waymo Jaguar I-PACE are both stopped in a curbside loading zone. Two wheeled delivery robots coordinate between the vehicles, one at each car's rear. A pedestrian with a stroller passes on the sidewalk. Shopping center storefronts visible in background. Midday sun, light shadows."
+    "id": "t2w_morning_robot_approach",
+    "prompt": "Early morning at a mostly empty shopping center parking lot. Soft golden sunrise light. A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features walks slowly along the curb toward a silver four-door sedan. The sedan is parked and stationary with its rear hatch open revealing an empty cargo area. No pedestrians visible. Loading zone markings painted in white and yellow on the asphalt. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_dual_delivery_bots",
+    "prompt": "A wide curbside loading zone at a modern shopping center. Two white sedans are parked in adjacent loading spots, both completely stationary with rear hatches open. Two small four-wheeled delivery robots with white bodies and sealed cardboard boxes on their cargo trays are positioned on the sidewalk, one near each vehicle. A pedestrian pushes a stroller along the sidewalk between the vehicles. Shopping center storefronts with large glass windows in the background. Midday sun, light shadows. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_rainy_handoff",
+    "prompt": "A curbside loading zone at a shopping center during light rain. Puddles on the asphalt reflect the overcast sky. A dark gray SUV is parked at the curb, completely stationary, with its rear hatch open. A small four-wheeled delivery robot with a white body and a sealed cardboard box on its cargo tray rolls slowly along the wet sidewalk toward the vehicle. One pedestrian with an open umbrella walks past on the sidewalk. Overcast sky, soft diffused light, no harsh shadows. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_bot_waiting_at_curb",
+    "prompt": "A small four-wheeled delivery robot with a white body and a sealed cardboard box on its flat cargo tray sits motionless on the sidewalk at the edge of a curbside loading zone. The loading zone is empty with no vehicles. White and yellow painted curb markings are visible. Two pedestrians walk along the sidewalk behind the robot. Daytime, partly cloudy sky, modern shopping center storefronts in the background. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_robot_loading_suv",
+    "prompt": "A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features places a sealed cardboard box into the open rear hatch of a white SUV parked at a curbside loading zone. The SUV is completely stationary. A small four-wheeled delivery robot with a white body and an empty flat cargo tray sits on the sidewalk nearby. Daytime, bright sunshine, blue sky with a few white clouds. Shopping center entrance with glass doors in the background. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_evening_golden_hour",
+    "prompt": "Late afternoon golden hour at a shopping center curbside loading zone. Warm orange sunlight casts long shadows across the pavement. A white four-door sedan is parked at the curb, completely stationary, with its rear hatch open. A Unitree bipedal robot with a fully metallic silver body and no human features stands beside the car holding a sealed cardboard box. The robot's metallic body reflects the warm sunlight. No pedestrians. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_cyclist_passing",
+    "prompt": "A curbside loading zone at a modern shopping center. A person on a bicycle rides past on the street adjacent to the loading zone. A white four-door sedan is parked at the curb, completely stationary. A small four-wheeled delivery robot with a white body and a sealed cardboard box on its cargo tray waits on the sidewalk near the vehicle. One pedestrian stands on the sidewalk looking at a phone. Daytime, clear weather, light breeze visible in nearby tree leaves. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_multiple_packages",
+    "prompt": "A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features carries two stacked sealed cardboard boxes in its mechanical arms, walking along the sidewalk toward a silver four-door sedan parked at a curbside loading zone. The sedan is completely stationary with its rear hatch open. Three sealed cardboard boxes are already visible inside the cargo area. No other agents in the scene. Daytime, overcast sky, even lighting. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_foggy_morning",
+    "prompt": "A foggy early morning at a shopping center curbside loading zone. Visibility is reduced with soft white fog blurring the background storefronts. A white SUV is parked at the curb, completely stationary, headlights on, rear hatch open. A small four-wheeled delivery robot with a white body and glowing LED indicator lights rolls slowly along the sidewalk toward the vehicle. The fog diffuses all light sources. No pedestrians visible. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_empty_loading_zone_signage",
+    "prompt": "An empty curbside loading zone at a modern shopping center. White and yellow painted curb markings delineate the zone. A sign post with a loading zone time restriction sign is visible at the edge of the sidewalk. No vehicles, no robots, no pedestrians. Clean asphalt pavement. Daytime, clear blue sky, shopping center storefronts with large glass windows in the background. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_bot_navigating_bollards",
+    "prompt": "A small four-wheeled delivery robot with a white body and a sealed cardboard box on its flat cargo tray navigates slowly between two metal bollards on a sidewalk near a curbside loading zone. A black four-door sedan is parked at the curb, completely stationary, with its rear hatch open. Pedestrians walk on the far side of the sidewalk. Daytime, partly cloudy, shopping center with brick facade in the background. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_nighttime_robot_loading",
+    "prompt": "Nighttime at a shopping center curbside loading zone. Bright overhead LED lights illuminate the scene with cool white light. A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features lifts a sealed cardboard box from a small four-wheeled delivery robot parked on the sidewalk. A white four-door sedan is parked at the curb with its rear hatch open and interior cargo light on. The metallic robot body reflects the overhead lights. No pedestrians. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_dog_walker_passing",
+    "prompt": "A curbside loading zone at a shopping center. A pedestrian walks a small dog on a leash along the sidewalk past a parked white SUV. The SUV is completely stationary at the curb. A small four-wheeled delivery robot with a white body is stopped on the sidewalk several feet away, waiting. A sealed cardboard box sits on the robot's flat cargo tray. Daytime, sunny, light shadows on the pavement. Storefronts with colorful awnings in the background. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_two_robots_walking",
+    "prompt": "Two Unitree bipedal robots with fully metallic silver bodies, articulated mechanical joints, and no human features walk side by side along a sidewalk at a shopping center. Each robot carries a sealed cardboard box in its mechanical arms. A white four-door sedan and a dark gray SUV are parked at the curb in the loading zone, both completely stationary with rear hatches open. Daytime, clear weather. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_vehicle_arriving",
+    "prompt": "A white four-door sedan slowly pulls into an empty curbside loading zone at a shopping center, approaching a parking spot at the curb. A small four-wheeled delivery robot with a white body and a sealed cardboard box on its cargo tray waits motionless on the sidewalk near the spot. No pedestrians in the immediate area. Other parked vehicles visible further down the curb, all completely stationary. Daytime, bright sunshine. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_overcast_package_handoff",
+    "prompt": "An overcast day at a shopping center curbside loading zone. Flat gray sky with no shadows on the ground. A Unitree bipedal robot with a fully metallic silver body and no human features reaches down toward a small four-wheeled delivery robot with a white body to pick up a sealed cardboard box from its flat cargo tray. A silver SUV is parked nearby at the curb, completely stationary, rear hatch open. Two pedestrians carrying shopping bags walk along the sidewalk. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_handicap_zone_adjacent",
+    "prompt": "A curbside loading zone next to a blue handicap parking space at a shopping center. A white four-door sedan is parked in the loading zone, completely stationary, with its rear hatch open. A small four-wheeled delivery robot with a white body rolls along the sidewalk toward the vehicle. A person in a wheelchair moves along the sidewalk in the background. Blue and white painted curb markings visible. Daytime, clear sky. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_three_bots_queue",
+    "prompt": "Three small four-wheeled delivery robots with white bodies are lined up single file on a sidewalk at a curbside loading zone. Each robot has a sealed cardboard box on its flat cargo tray. The lead robot is positioned closest to a white SUV parked at the curb with its rear hatch open. The SUV is completely stationary. A Unitree bipedal robot with a fully metallic silver body and no human features stands at the rear of the SUV. Daytime, midday sun. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_dusk_hazard_lights",
+    "prompt": "Dusk at a shopping center curbside loading zone. The sky is deep blue and purple with the last traces of sunset. A dark gray four-door sedan is parked at the curb with hazard lights blinking orange and rear hatch open. A small four-wheeled delivery robot with a white body and glowing LED lights approaches from the sidewalk. Overhead streetlights are beginning to turn on, casting warm pools of light. One pedestrian walks past. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_wide_angle_overview",
+    "prompt": "A wide view of a shopping center parking lot and curbside loading zone from above. Three vehicles are parked along the curb in designated loading spots, all completely stationary. A small four-wheeled delivery robot with a white body moves slowly along the sidewalk. Pedestrians are scattered across the parking lot walking toward the shopping center entrance. Trees with green leaves line the sidewalk. Daytime, clear sky, midday sun. Wide angle, security camera perspective from above, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_robot_walking_box_to_car",
+    "prompt": "A Unitree bipedal robot with a fully metallic silver body, articulated mechanical joints, and no human features walks along a sidewalk carrying a large sealed cardboard box in both mechanical arms. The robot approaches a white four-door sedan parked at a curbside loading zone with its rear hatch open. The car is completely stationary. Shopping center storefronts with potted plants along the sidewalk in the background. Daytime, warm afternoon light. Wide angle, security camera perspective, static camera, no camera movement."
+  },
+  {
+    "id": "t2w_delivery_bot_crosswalk",
+    "prompt": "A small four-wheeled delivery robot with a white body and a sealed cardboard box on its flat cargo tray crosses a painted crosswalk at a shopping center, moving from one sidewalk toward the curbside loading zone. A white SUV is parked at the curb on the other side, completely stationary, rear hatch open. Two pedestrians wait at the crosswalk edge. Daytime, clear weather, sharp shadows on the white crosswalk stripes. Wide angle, security camera perspective, static camera, no camera movement."
   }
 ]

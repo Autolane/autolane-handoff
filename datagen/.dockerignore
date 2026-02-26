@@ -1,0 +1,11 @@
+datagen/site_photos/
+data/
+.env
+.env.*
+!.env.example
+.git/
+.gitignore
+dashboard/
+.venv/
+__pycache__/
+*.pyc

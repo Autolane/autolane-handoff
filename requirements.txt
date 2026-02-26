@@ -3,11 +3,20 @@
 # Core
 torch>=2.1.0
 torchvision>=0.16.0
-transformers>=4.40.0
+transformers>=4.50.0,<5.0.0  # groundingdino-py 0.4.0 calls BertModel.get_head_mask(), removed in transformers 5.0
 accelerate>=0.27.0
 
-# Cosmos Reason 2 inference
-vllm>=0.4.0
+# Cosmos Reason 2 inference (8B requires vLLM >= 0.11.0 for video support)
+vllm>=0.11.0
+huggingface_hub>=0.20.0
+
+# Vertex AI deployment + inference client
+google-cloud-aiplatform>=1.40.0
+google-cloud-storage>=2.14.0
+google-auth>=2.25.0
+pydantic-settings>=2.1.0
+structlog>=24.1.0
+httpx>=0.27.0
 
 # Grounding DINO
 groundingdino-py>=0.4.0
@@ -26,8 +35,8 @@ python-multipart>=0.0.9
 datasets>=2.18.0
 jsonlines>=4.0.0
 
-# Cosmos Predict 2.5 (datagen)
-diffusers>=0.27.0
+# Cosmos Predict 2.5 (datagen) — requires diffusers >= 0.32.0 for Cosmos2_5_PredictBasePipeline
+diffusers>=0.32.0
 
 # Utilities
 tqdm>=4.66.0
