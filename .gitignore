@@ -23,6 +23,8 @@ env/
 # Generated data (use Git LFS or external storage)
 data/synthetic_clips/
 data/annotated/
+data/annotations/
+data/training/
 data/train.json
 datagen/site_photos/*.jpg
 datagen/site_photos/*.png
