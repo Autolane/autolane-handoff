@@ -1,0 +1,60 @@
+# sft_config.toml — Autolane Handoff SFT (adapted from ITS recipe)
+#
+# 8B model config for 4x A100-40GB with FSDP CPU offloading.
+# For 8x A100-80GB: set dp_shard_size=8, fsdp_offload=false,
+#   train_batch_per_replica=32, model_max_length=32768.
+#
+# Usage:
+#   cosmos-rl --config sft_config.toml --log-dir outputs/ custom_sft.py
+#
+# For 2B fast iteration, use sft_config_2b.toml instead.
+
+redis = "12800"
+
+[custom.dataset]
+annotation_path = "/data/autolane-handoff/training/llava_train.json"
+media_path = "/data/autolane-handoff"
+system_prompt = "You are Autolane Handoff, an autonomous delivery coordination AI. You analyze curbside zones to reason about multi-agent handoff safety, compliance, and optimal sequencing for autonomous delivery operations."
+
+[custom.vision]
+nframes = 8
+
+[train]
+optm_lr = 2e-5
+output_dir = "outputs/autolane_sft_8b"
+optm_warmup_steps = 0
+optm_decay_type = "cosine"
+optm_weight_decay = 0.01
+train_batch_per_replica = 4
+enable_validation = false
+compile = false
+fsdp_offload = true
+epoch = 1
+
+[train.train_policy]
+type = "sft"
+mini_batch = 1
+dataset.test_size = 0
+dataloader_num_workers = 4
+dataloader_prefetch_factor = 4
+
+[train.ckpt]
+enable_checkpoint = true
+save_freq = 20
+export_safetensors = true
+
+[policy]
+model_name_or_path = "nvidia/Cosmos-Reason2-8B"
+model_max_length = 8192
+model_gradient_checkpointing = true
+
+[policy.parallelism]
+tp_size = 1
+cp_size = 1
+dp_shard_size = 4
+pp_size = 1
+
+[logging]
+logger = ['console', 'wandb']
+project_name = "autolane-handoff"
+experiment_name = "curbside_handoff_sft_8b"
